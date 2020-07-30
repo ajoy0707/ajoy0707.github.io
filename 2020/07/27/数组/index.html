@@ -16,7 +16,7 @@
 <meta property="og:description" content="总结–数组">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-27T08:18:45.000Z">
-<meta property="article:modified_time" content="2020-07-28T13:35:57.337Z">
+<meta property="article:modified_time" content="2020-07-30T01:23:21.142Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -183,13 +183,8 @@ int (*p)[Column]=new int [size][Column]</code></pre><p>这样的语句，编译�
 </blockquote>
 <pre><code>int size=50
 int (*p)[50]=new int [size][50]</code></pre><p>可以发现，以上分配对于二维数组不是真正的动态分配，也需要我们明确数组的行数，而一维数组是动态的，那么，我们利用一维来定义二维</p>
-<pre><code>size =6;
-column =5； //行数
-int **p=new int*[size];
-for(int i=0;i&lt;size;i++)
-{
-  p[i]=new int[Column];
-}</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">size &#x3D;6;</span><br><span class="line">column &#x3D;5； &#x2F;&#x2F;行数</span><br><span class="line">int **p&#x3D;new int*[size];</span><br><span class="line">for(int i&#x3D;0;i&lt;size;i++)</span><br><span class="line">&#123;</span><br><span class="line">  p[i]&#x3D;new int[Column];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       

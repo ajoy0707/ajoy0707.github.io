@@ -16,7 +16,7 @@
 <meta property="og:description" content="学习笔记——原地算法">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-17T06:52:37.000Z">
-<meta property="article:modified_time" content="2020-07-28T13:32:34.108Z">
+<meta property="article:modified_time" content="2020-07-30T01:21:03.600Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="笔试面试">
 <meta name="twitter:card" content="summary">
@@ -173,21 +173,8 @@
 <h2 id="原地算法（in-place-algorithm）"><a href="#原地算法（in-place-algorithm）" class="headerlink" title="原地算法（in-place algorithm）"></a>原地算法（in-place algorithm）</h2><p>In computer science, an in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. In-place algorithm updates input sequence only through replacement or swapping of elements. An algorithm which is not in-place is sometimes called not-in-place or out-of-place——摘自Viki</p>
 <p>假设要将具有 n 项内容的数组 a 翻转过来。一种看似简单的方法是创建一个大小相等的新数组，用适当的顺序填充副本，然后再删除，但显然增大了程序的运行需要的内存。原地算法时间复杂度为O（1）.</p>
 <pre><code>链接：https://www.nowcoder.com/questionTerminal/623a5ac0ea5b4e5f95552655361ae0a8?answerType=1&amp;f=discussion</code></pre><p>来源：牛客网面试题3：找出数组中重复的数字</p>
-<pre><code>bool duplicate(int numbers[], int length, int* duplication) {
-    for (int i=0; i&lt;length; ++i) {
-    // 不相等就一直交换
-    while (i != numbers[i]) {
-        if (numbers[i] != numbers[numbers[i]]) {
-            swap(numbers[i], numbers[numbers[i]]);
-        }
-        else {
-            *duplication = numbers[i];
-            return true;
-        }
-    }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool duplicate(int numbers[], int length, int* duplication) &#123;</span><br><span class="line">    for (int i&#x3D;0; i&lt;length; ++i) &#123;</span><br><span class="line">     &#x2F;&#x2F; 不相等就一直交换</span><br><span class="line">    while (i !&#x3D; numbers[i]) &#123;</span><br><span class="line">        if (numbers[i] !&#x3D; numbers[numbers[i]]) &#123;</span><br><span class="line">            swap(numbers[i], numbers[numbers[i]]);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">         *duplication &#x3D; numbers[i];</span><br><span class="line">         return true;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-}
-return false;</code></pre><p> }<br>};</p>
 
       
 
