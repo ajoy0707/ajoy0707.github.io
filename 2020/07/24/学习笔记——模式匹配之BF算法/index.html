@@ -170,7 +170,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="学习笔记——BF算法"><a href="#学习笔记——BF算法" class="headerlink" title="学习笔记——BF算法"></a>学习笔记——BF算法</h1> <a id="more"></a> 
-<h2 id="BF算法，即暴力-Brute-Force-算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和-T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。"><a href="#BF算法，即暴力-Brute-Force-算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和-T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。" class="headerlink" title="BF算法，即暴力(Brute Force)算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和 T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。"></a>BF算法，即暴力(Brute Force)算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和 T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><blockquote>
+<h2 id="BF算法，即暴力-Brute-Force-算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和-T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。"><a href="#BF算法，即暴力-Brute-Force-算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和-T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。" class="headerlink" title="BF算法，即暴力(Brute Force)算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和 T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。"></a>BF算法，即暴力(Brute Force)算法，是普通的模式匹配算法，BF算法的思想就是将目标串S的第一个字符与模式串T的第一个字符进行匹配，若相等，则继续比较S的第二个字符和 T的第二个字符；若不相等，则比较S的第二个字符和T的第一个字符，依次比较下去，直到得出最后的匹配结果。BF算法是一种蛮力算法。</h2><h2 id><a href="#" class="headerlink" title></a></h2><blockquote>
 <p>在这里主要说明一些对回溯过程中下标的变化（i-j+1）或（i-j+2）的理解。</p>
 </blockquote>
 <h2 id="首先，明确i、j代表主串和子串中元素的下标。"><a href="#首先，明确i、j代表主串和子串中元素的下标。" class="headerlink" title="首先，明确i、j代表主串和子串中元素的下标。"></a>首先，明确i、j代表主串和子串中元素的下标。</h2><ol>
@@ -182,7 +182,7 @@
 <blockquote>
 <p>可能产生疑惑的点主要在于回溯位置与到底＋1还是＋2，我的理解是将i-j看作整体，即i与j所在的位置差几，另外，若ij初值取为0，用i-j+1，若ij初值取为1，用i-j+2。可以自己举例代入尝试。以下例子选取了更易懂的方式，即中间参数index。</p>
 </blockquote>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p>   #include <iostream><br>   #include &lt;string.h&gt;<br>   using namespace std;</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><p>   #include <iostream><br>   #include &lt;string.h&gt;<br>   using namespace std;</iostream></p>
 <pre><code>int BF(string S,string T)</code></pre><p>   {</p>
 <pre><code>  int index=0;
   int i=0;
@@ -469,11 +469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
