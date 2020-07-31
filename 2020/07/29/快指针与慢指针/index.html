@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://yoursite.com/images/fastslow.jpg">
 <meta property="og:image" content="http://yoursite.com/images/k.jpg">
 <meta property="article:published_time" content="2020-07-29T09:14:10.000Z">
-<meta property="article:modified_time" content="2020-07-30T13:16:50.379Z">
+<meta property="article:modified_time" content="2020-07-31T02:18:30.842Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="踩坑记录">
 <meta name="twitter:card" content="summary">
@@ -213,8 +213,8 @@ public:
 <p>网上搜了好多，我觉得说的都不太直接易懂，这个原理的精髓就是：平移！</p>
 </blockquote>
 <p><img src="/images/k.jpg" alt="alt"></p>
-<p>让快指针先走 k 步，然后快慢指针开始同速前进<br>当快指针走到链表末尾 null 时，慢指针所在的位置就是倒数第 k 个链表节点.</p>
-<h3 id="例见剑指offer面试22，链表中倒数第K个结点"><a href="#例见剑指offer面试22，链表中倒数第K个结点" class="headerlink" title="例见剑指offer面试22，链表中倒数第K个结点"></a>例见剑指offer面试22，链表中倒数第K个结点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    ListNode* FindKthToTail(ListNode* head, unsigned int k) &#123;</span><br><span class="line">        int n &#x3D; 0;</span><br><span class="line">        ListNode * p &#x3D; head ;</span><br><span class="line">        while(p)</span><br><span class="line">        &#123;</span><br><span class="line">            p &#x3D; p -&gt; next;</span><br><span class="line">            n ++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n &lt; k)</span><br><span class="line">            return nullptr;</span><br><span class="line">         for(int i &#x3D; 1;i &lt;&#x3D; n-k; i++)</span><br><span class="line">              p &#x3D; p -&gt; next;   &#x2F;&#x2F;倒数第k对应正数第n-k+1,所以指针往后走了n-k步</span><br><span class="line">         return p;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>让快指针先走 k 步，然后快慢指针开始同速前进<br>当快指针走到链表末尾 null 时，慢指针所在的位置就是倒数第 k 个链表节点.（图里画错了，把k写成了k-1）</p>
+<h3 id="例见剑指offer面试22，链表中倒数第K个结点"><a href="#例见剑指offer面试22，链表中倒数第K个结点" class="headerlink" title="例见剑指offer面试22，链表中倒数第K个结点"></a>例见剑指offer面试22，链表中倒数第K个结点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    ListNode* FindKthToTail(ListNode* head, unsigned int k) &#123;</span><br><span class="line">        int n &#x3D; 0;</span><br><span class="line">        ListNode * p &#x3D; head ;</span><br><span class="line">        while(p)s</span><br><span class="line">        &#123;</span><br><span class="line">            p &#x3D; p -&gt; next;</span><br><span class="line">            n ++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n &lt; k)</span><br><span class="line">            return nullptr;</span><br><span class="line">         for(int i &#x3D; 1;i &lt;&#x3D; n-k; i++)</span><br><span class="line">              p &#x3D; p -&gt; next;   &#x2F;&#x2F;倒数第k对应正数第n-k+1,所以指针往后走了n-k步</span><br><span class="line">         return p;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="感觉写的相当对，错误暂时没改过来"><a href="#感觉写的相当对，错误暂时没改过来" class="headerlink" title="感觉写的相当对，错误暂时没改过来"></a>感觉写的相当对，错误暂时没改过来</h3><hr>
 <p>双指针解法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* FindKthToTail(ListNode* head, unsigned int k) &#123;</span><br><span class="line">        if(!head||k &lt;&#x3D; 0)</span><br><span class="line">            return nullptr;</span><br><span class="line">        ListNode* fast &#x3D; head;</span><br><span class="line">        ListNode* slow &#x3D; head;</span><br><span class="line">        for(int i &#x3D; 0; i &lt;&#x3D; k-1; i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(fast)</span><br><span class="line">                fast &#x3D; fast -&gt; next;</span><br><span class="line">            else</span><br><span class="line">                return nullptr;</span><br><span class="line">        &#125;</span><br><span class="line">        while(fast)</span><br><span class="line">        &#123;</span><br><span class="line">            fast &#x3D; fast -&gt; next;</span><br><span class="line">            slow &#x3D; slow -&gt; next;</span><br><span class="line">        &#125;</span><br><span class="line">        return slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -329,6 +329,15 @@ public:
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/31/%E8%99%9A%E6%8B%9F%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          虚拟头结点的应用
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/28/tips/" id="article-nav-older" class="article-nav-link-wrap">
