@@ -16,7 +16,7 @@
 <meta property="og:description" content="Josephuse环问题-圆环中最后剩下的数">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-03T08:48:31.000Z">
-<meta property="article:modified_time" content="2020-08-03T11:43:18.669Z">
+<meta property="article:modified_time" content="2020-08-05T01:32:25.622Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="踩坑记录">
 <meta name="twitter:card" content="summary">
@@ -173,8 +173,15 @@
 <h3 id="n个小朋友们围成一个大圈。随机指定一个数m-让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列，从他的下一个小朋友开始-继续0…m-1报数…-这样下去…-直到剩下最后一个小朋友，剩下的小朋友编号是？？-注：小朋友的编号是从0到n-1"><a href="#n个小朋友们围成一个大圈。随机指定一个数m-让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列，从他的下一个小朋友开始-继续0…m-1报数…-这样下去…-直到剩下最后一个小朋友，剩下的小朋友编号是？？-注：小朋友的编号是从0到n-1" class="headerlink" title="n个小朋友们围成一个大圈。随机指定一个数m,让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列，从他的下一个小朋友开始,继续0…m-1报数….这样下去….直到剩下最后一个小朋友，剩下的小朋友编号是？？(注：小朋友的编号是从0到n-1)"></a>n个小朋友们围成一个大圈。随机指定一个数m,让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列，从他的下一个小朋友开始,继续0…m-1报数….这样下去….直到剩下最后一个小朋友，剩下的小朋友编号是？？(注：小朋友的编号是从0到n-1)</h3><h3 id="第一眼肯定想到，从循环链表里每m个数就取走，直到最后剩下一个数为止，可以用C-自带库-普通方法待更新——————————————"><a href="#第一眼肯定想到，从循环链表里每m个数就取走，直到最后剩下一个数为止，可以用C-自带库-普通方法待更新——————————————" class="headerlink" title="第一眼肯定想到，从循环链表里每m个数就取走，直到最后剩下一个数为止，可以用C++自带库.(普通方法待更新——————————————)"></a>第一眼肯定想到，从循环链表里每m个数就取走，直到最后剩下一个数为止，可以用C++自带库.(普通方法待更新——————————————)</h3><h3 id="然而，按照套路，这种方法肯定不是令人满意的，所以——"><a href="#然而，按照套路，这种方法肯定不是令人满意的，所以——" class="headerlink" title="然而，按照套路，这种方法肯定不是令人满意的，所以——"></a>然而，按照套路，这种方法肯定不是令人满意的，所以——</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int LastRemaining_Solution(int n, int m)</span><br><span class="line">    &#123;</span><br><span class="line">        if(n &#x3D;&#x3D; 0)</span><br><span class="line">            return -1;</span><br><span class="line">        if(n &#x3D;&#x3D; 1)</span><br><span class="line">            return 0;</span><br><span class="line">        else</span><br><span class="line">            return (LastRemaining_Solution(n-1, m)+m)% n; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
-<li>本题要点是将有小朋友出列后的序号和初始序号对应上，也就是还原他们的下标。 </li>
-<li>我的错误是“%”和“/”的用法含糊不清，将LastRemaining_Solution(n-1, m)+m)% n最后的n写成了m。</li>
+<li>本题要点是将有小朋友出列后的序号和初始序号对应上，也就是还原他们的下标。这时候开始找规律：</li>
+</ol>
+<ul>
+<li>标号为m-1的人出列了，从m-1的下一人从0开始计数,后面的人标号都比上一轮前移了m个</li>
+<li>若从最后一轮开始看它的逆过程，则每轮比上一轮的标号后移m个，则有last=（last+m）% i,i为每轮环里还剩下的人数</li>
+<li>以找递推公式的方式来看，f(n,m)=(f(n−1,m)+m)%n，f函数表示剩下m个人时让第n个出列时的他标号。</li>
+</ul>
+<ol start="2">
+<li>我的错误是将LastRemaining_Solution(n-1, m)+m)% n最后的n写成了m。参考链表防止溢出时的做法。</li>
 </ol>
 </blockquote>
 
@@ -422,11 +429,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">踩坑记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,7 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">踩坑记录</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
               </li>
             
             <div class="clearfix"></div>
