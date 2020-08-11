@@ -18,8 +18,9 @@
 <meta property="og:image" content="http://yoursite.com/images/1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/git.jpg">
 <meta property="article:published_time" content="2020-08-07T12:43:03.000Z">
-<meta property="article:modified_time" content="2020-08-08T13:21:04.178Z">
+<meta property="article:modified_time" content="2020-08-11T09:02:18.195Z">
 <meta property="article:author" content="joy">
+<meta property="article:tag" content="踩坑记录">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/1.jpg">
   
@@ -183,7 +184,7 @@
 <li>安装bash-completion<br>yum -y install bash-completion<br>yum -y install bash-completion-extras # CentOS 7 再多安装一个</li>
 <li>生效<br>source /etc/profile.d/bash_completion.sh </li>
 </ol>
-<p>一股脑敲进去，好嘛，依然没有，仔细一看需要root权限，对应的命令是什么？继续百度百科-启动：</p>
+<p>一股脑敲进去，好嘛，依然没有，仔细一看需要root权限，继续百度百科-启动：</p>
 <ol>
 <li>su–进入root权限模式</li>
 <li>exit–退回普通用户模式</li>
@@ -210,10 +211,7 @@
 <p>本人操作时出现这样的问题<br><img src="/images/git.jpg" alt="alt"><br>原因是这个命令没有安装导致的，安装git命令即可解决问题，Linux百科网是以CentOS 7 64位系统为例，在安装git命令之前需要先启用EPEL存储库。我是centos7、64位系统：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">执行：wget http:&#x2F;&#x2F;dl.fedoraproject.org&#x2F;pub&#x2F;epel&#x2F;epel-release-latest-7.noarch.rpm</span><br><span class="line">执行：rpm -ivh epel-release-latest-7.noarch.rpm</span><br><span class="line">执行：yum install -y git</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
+<h4 id="2-使用centos安装MySQL"><a href="#2-使用centos安装MySQL" class="headerlink" title="(2)使用centos安装MySQL"></a>(2)使用centos安装MySQL</h4>没有遇到什么问题，网上教程很多。</li>
 </ol>
 
       
@@ -244,6 +242,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">踩坑记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -346,7 +355,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos7纯新手向踩坑实录"><span class="toc-number">1.</span> <span class="toc-text">centos7纯新手向踩坑实录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、下载与安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、下载与安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、各种配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、各种配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、软件的安装"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、软件的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-使用centos安装git"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">(1)使用centos安装git</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos7纯新手向踩坑实录"><span class="toc-number">1.</span> <span class="toc-text">centos7纯新手向踩坑实录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、下载与安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、下载与安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、各种配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、各种配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、软件的安装"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、软件的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-使用centos安装git"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">(1)使用centos安装git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用centos安装MySQL"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">(2)使用centos安装MySQL</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
