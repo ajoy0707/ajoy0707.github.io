@@ -16,7 +16,7 @@
 <meta property="og:description" content="持续更新一些遇到的零碎小tips">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T13:10:37.000Z">
-<meta property="article:modified_time" content="2020-07-31T02:55:54.528Z">
+<meta property="article:modified_time" content="2020-08-14T08:02:51.602Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -171,10 +171,17 @@
       
         <h1 id="持续更新一些遇到的零碎小tips"><a href="#持续更新一些遇到的零碎小tips" class="headerlink" title="持续更新一些遇到的零碎小tips"></a>持续更新一些遇到的零碎小tips</h1> <a id="more"></a> 
 <h2 id><a href="#" class="headerlink" title></a></h2><ul>
-<li>如何遍历链表：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (head)  &#123;</span><br><span class="line">  head &#x3D; head-&gt;next;</span><br><span class="line">  &#125; &#x2F;&#x2F;发现这个方法不太好，另设一个p指针吧</span><br></pre></td></tr></table></figure></li>
+<li>如何遍历链表：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (head)  &#123;</span><br><span class="line">  head &#x3D; head-&gt;next;</span><br><span class="line">  &#125; &#x2F;&#x2F;发现这个方法不好，另设一个p指针,别用head</span><br></pre></td></tr></table></figure></li>
 <li>C++11版本用nullptr这一新的关键字来代指空指针。（C语言中使用NULL，是一个void * 型的空指针，在c++中不能隐式类型转换成相应的类型）</li>
-<li>while与if：if后加判断条件加某个语句，执行一次；while（某个变化的量），后面的语句在满足条件的情况下一直执行。（最近刷题刷的眼晕，经常钻思维上的死胡同，产生一些奇奇怪怪的问题。）</li>
+<li>while与if：if后加判断条件加某个语句，执行一次；while（某个变化的量），后面的语句在满足条件的情况下一直执行。（最近刷题刷的眼晕，经常钻思维上的死胡同，产生一些奇怪的问题。）</li>
+<li>cin、cin.get()、cin.getline()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cin&gt;&gt;a;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+cin:遇到空格就结束–输入abc d,输出abc<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a[20];</span><br><span class="line">cin.get(a,20);</span><br></pre></td></tr></table></figure>
+cin.get(数组名，字符个数):用来获取一行字符串，中间可以接收空格并输出<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char m[20];</span><br><span class="line">cin.getline(m,5);</span><br></pre></td></tr></table></figure>
+cin.getline()实际上有三个参数，cin.getline(名字m,接受个数5,结束字符)<br>cin.getline(m，5)若输入abcdefg,输出abcd,默认第三个参数是’\0’占一个位<br>cin.getline(m，5,’c’),输出ab</li>
+<li>类模板:template &lt;class T1, class T2&gt;struct pair</li>
 </ul>
+<p>pair将一对值组合成一个值，这一对值可以具有不同的数据类型（T1和T2），两个值可以分别用pair的两个公有函数first和second访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;int, double&gt; p1;  &#x2F;&#x2F;使用默认构造函数</span><br><span class="line">pair&lt;int, double&gt; p2(1, 2.4);  &#x2F;&#x2F;用给定值初始化</span><br><span class="line">pair&lt;int, double&gt; p3(p2);  &#x2F;&#x2F;拷贝构造函数</span><br><span class="line">&#x2F;&#x2F;访问</span><br><span class="line">p1.first &#x3D; 1;</span><br><span class="line">p1.second &#x3D; 2.4;</span><br><span class="line">cout &lt;&lt; p1.first &lt;&lt; &#39; &#39; &lt;&lt; p1.second &lt;&lt; endl;</span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">pair&lt;int, double&gt; p1;</span><br><span class="line">p1 &#x3D; make_pair(1, 1.2);</span><br></pre></td></tr></table></figure>
 
       
 
