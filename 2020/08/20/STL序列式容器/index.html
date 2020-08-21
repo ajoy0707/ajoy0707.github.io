@@ -16,7 +16,7 @@
 <meta property="og:description" content="STL序列式容器总结">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-20T15:38:03.000Z">
-<meta property="article:modified_time" content="2020-08-21T02:01:16.316Z">
+<meta property="article:modified_time" content="2020-08-21T02:06:30.738Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -185,9 +185,55 @@
 <td>C++ 11 新加入 4 种关联式容器，分别是 unordered_set 哈希集合、unordered_multiset 哈希多重集合、unordered_map 哈希映射以及 unordered_multimap 哈希多重映射。和排序容器不同，哈希容器中的元素是未排序的，元素的位置由哈希函数确定。</td>
 </tr>
 </tbody></table>
-<hr>
-<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><hr>
-<p>迭代器和指针非常类似，它可以是需要的任意类型，通过迭代器可以指向容器中的某个元素，如果需要，还可以对该元素进行读/写操作。常用的迭代器按功能强弱分为输入迭代器、输出迭代器、前向迭代器、双向迭代器、随机访问迭代器 5 种。这里只总结一些常见用法。<br>|容器|对应迭代器|<br> |—|—|—|<br> |array|随机访问迭代器|<br> |vector|随机访问迭代器|<br> |deque|随机访问迭代器|<br> |list|双向迭代器(不能随机访问)|<br> |set|双向迭代器(不能随机访问)|<br> |map|双向迭代器(不能随机访问)|<br> |unordered_map / unordered_multimap|前向迭代器|<br> |unordered_set / unordered_multiset|前向迭代器|<br> |stack|不支持迭代器|<br> |queue|不支持迭代器|</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>迭代器和指针非常类似，它可以是需要的任意类型，通过迭代器可以指向容器中的某个元素，如果需要，还可以对该元素进行读/写操作。常用的迭代器按功能强弱分为输入迭代器、输出迭代器、前向迭代器、双向迭代器、随机访问迭代器 5 种。这里只总结一些常见用法。</p>
+<table>
+<thead>
+<tr>
+<th>容器</th>
+<th>对应迭代器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>array</td>
+<td>随机访问迭代器</td>
+</tr>
+<tr>
+<td>vector</td>
+<td>随机访问迭代器</td>
+</tr>
+<tr>
+<td>deque</td>
+<td>随机访问迭代器</td>
+</tr>
+<tr>
+<td>list</td>
+<td>双向迭代器(不能随机访问)</td>
+</tr>
+<tr>
+<td>set</td>
+<td>双向迭代器(不能随机访问)</td>
+</tr>
+<tr>
+<td>map</td>
+<td>双向迭代器(不能随机访问)</td>
+</tr>
+<tr>
+<td>unordered_map / unordered_multimap</td>
+<td>前向迭代器</td>
+</tr>
+<tr>
+<td>unordered_set / unordered_multiset</td>
+<td>前向迭代器</td>
+</tr>
+<tr>
+<td>stack</td>
+<td>不支持迭代器</td>
+</tr>
+<tr>
+<td>queue</td>
+<td>不支持迭代器</td>
+</tr>
+</tbody></table>
 <blockquote>
 <p>双向迭代器：指针可以++、–，因此不支持下标访问，同时也不支持比较符号，如：for(i = v.begin(); i &lt; v.end(); ++i)，可以改为 for(i = v.begin(); i != v.end(); ++i)</p>
 </blockquote>
@@ -447,15 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">踩坑记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
