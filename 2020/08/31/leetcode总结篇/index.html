@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/images/mantree.png">
 <meta property="og:image" content="http://yoursite.com/images/mantree1.png">
 <meta property="article:published_time" content="2020-08-31T13:21:11.000Z">
-<meta property="article:modified_time" content="2020-09-02T12:17:47.010Z">
+<meta property="article:modified_time" content="2020-09-02T12:22:43.271Z">
 <meta property="article:author" content="joy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/delete.png">
@@ -195,7 +195,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TreeNode minNode &#x3D; getMin(node-&gt;right);</span><br><span class="line">node-&gt;data &#x3D; minNode.data;</span><br><span class="line">node-&gt;right &#x3D; deleteNode(node-&gt;right, minNode.data);</span><br></pre></td></tr></table></figure>
 <h2 id="完全二叉树的节点个数"><a href="#完全二叉树的节点个数" class="headerlink" title="完全二叉树的节点个数"></a>完全二叉树的节点个数</h2><p>[leetcode]<a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/count-complete-tree-nodes/</a></p>
 <p><img src="/images/mantree.png" alt="alt"><br>如图所示，借助完全二叉树的性质，满二叉树是特殊的完全二叉树，结点数与深度存在关系：2^h-1。</p>
-<p><img src="/images/mantree1.png" alt="alt"><br>因此，加入判断，若是满二叉树，则使用以上关系，若不是，普通递归遍历。</p>
+<p><img src="/images/mantree1.png" alt="alt"><br>因此，加入判断，若是满二叉树，则使用以上关系，若不是，普通递归遍历。复杂度为O(logn*logn)</p>
 
       
 
