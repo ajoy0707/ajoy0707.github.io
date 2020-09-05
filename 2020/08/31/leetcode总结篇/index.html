@@ -6,24 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>leetcode总结篇 | Hexo</title>
+  <title>二叉树相关 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="leetcode总结篇 – 二叉树相关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode总结篇">
+<meta property="og:title" content="二叉树相关">
 <meta property="og:url" content="http://yoursite.com/2020/08/31/leetcode%E6%80%BB%E7%BB%93%E7%AF%87/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="leetcode总结篇 – 二叉树相关">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/pre.jpg">
+<meta property="og:image" content="http://yoursite.com/images/in.jpg">
 <meta property="og:image" content="http://yoursite.com/images/delete.png">
 <meta property="og:image" content="http://yoursite.com/images/delete2.png">
 <meta property="og:image" content="http://yoursite.com/images/mantree.png">
 <meta property="og:image" content="http://yoursite.com/images/mantree1.png">
 <meta property="article:published_time" content="2020-08-31T13:21:11.000Z">
-<meta property="article:modified_time" content="2020-09-02T12:22:43.271Z">
+<meta property="article:modified_time" content="2020-09-05T14:18:00.642Z">
 <meta property="article:author" content="joy">
+<meta property="article:tag" content="leetcode总结">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/delete.png">
+<meta name="twitter:image" content="http://yoursite.com/images/pre.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -160,7 +163,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      leetcode总结篇
+      二叉树相关
     </h1>
   
 
@@ -176,6 +179,15 @@
         <hr>
 <h1 id="leetcode总结篇-–-二叉树相关"><a href="#leetcode总结篇-–-二叉树相关" class="headerlink" title="leetcode总结篇 – 二叉树相关"></a>leetcode总结篇 – 二叉树相关</h1> <a id="more"></a> 
 <p> 数据结构，包括树，常见的操作无非是增删改查，其实这个说法顺序有误，应当是：查（遍历）+改（增删）。因此此篇中讨论的所有解题步骤总体上分为两步：遍历、增删。</p>
+<h2 id="二叉树的遍历：递归和迭代"><a href="#二叉树的遍历：递归和迭代" class="headerlink" title="二叉树的遍历：递归和迭代"></a>二叉树的遍历：递归和迭代</h2><p> 递归不再赘述，这里记录迭代法。<br> 懒得敲了直接拍照。。。。</p>
+<p> 前序<br>  <img src="/images/pre.jpg" alt="alt"></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; res;  &#x2F;&#x2F;保存结果</span><br><span class="line">        stack&lt;TreeNode*&gt; call;  &#x2F;&#x2F;调用栈</span><br><span class="line">        if(root!&#x3D;nullptr) call.push(root);  &#x2F;&#x2F;首先介入root节点</span><br><span class="line">        while(!call.empty())&#123;</span><br><span class="line">            TreeNode *t &#x3D; call.top();</span><br><span class="line">            call.pop();  &#x2F;&#x2F;访问过的节点弹出</span><br><span class="line">            if(t!&#x3D;nullptr)&#123;</span><br><span class="line">                if(t-&gt;right) call.push(t-&gt;right);  &#x2F;&#x2F;右节点先压栈，最后处理</span><br><span class="line">                if(t-&gt;left) call.push(t-&gt;left);</span><br><span class="line">                call.push(t);  &#x2F;&#x2F;当前节点重新压栈（留着以后处理），因为先序遍历所以最后压栈</span><br><span class="line">                call.push(nullptr);  &#x2F;&#x2F;在当前节点之前加入一个空节点表示已经访问过了</span><br><span class="line">            &#125;else&#123;  &#x2F;&#x2F;空节点表示之前已经访问过了，现在需要处理除了递归之外的内容</span><br><span class="line">                res.push_back(call.top()-&gt;val);  &#x2F;&#x2F;call.top()是nullptr之前压栈的一个节点，也就是上面call.push(t)中的那个t</span><br><span class="line">                call.pop();  &#x2F;&#x2F;处理完了，第二次弹出节点（彻底从栈中移除）</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p> 中序<br>  <img src="/images/in.jpg" alt="alt"></p>
+<p>我们以中序遍历为例，之前说使用栈的话，无法同时解决处理过程和访问过程不一致的情况，那我们就将访问的节点放入栈中，把要处理的节点也放入栈中但是要做标记，标记就是要处理的节点放入栈之后，紧接着放入一个空指针作为标记。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        stack&lt;TreeNode*&gt; st;</span><br><span class="line">        if (root !&#x3D; NULL) st.push(root);</span><br><span class="line">        while (!st.empty()) &#123;</span><br><span class="line">            TreeNode* node &#x3D; st.top();</span><br><span class="line">            if (node !&#x3D; NULL) &#123;</span><br><span class="line">                st.pop(); &#x2F;&#x2F; 将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中</span><br><span class="line">                if (node-&gt;right) st.push(node-&gt;right); &#x2F;&#x2F; 添加右节点</span><br><span class="line">                st.push(node); &#x2F;&#x2F; 添加中节点</span><br><span class="line">                st.push(NULL); &#x2F;&#x2F; 中节点访问过，但是还没有处理，需要做一下标记。</span><br><span class="line">                if (node-&gt;left) st.push(node-&gt;left); &#x2F;&#x2F; 添加左节点</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                st.pop(); &#x2F;&#x2F; 将空节点弹出</span><br><span class="line">                node &#x3D; st.top(); &#x2F;&#x2F; 重新取出栈中元素</span><br><span class="line">                st.pop();</span><br><span class="line">                result.push_back(node-&gt;val); &#x2F;&#x2F; 加入到数组中</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;if</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这种统一解法里， if (node != NULL) 里在遍历，else里在进行处理，加入了标志点null之后，恰好进入处理流程。以上是中序为例，若前序后序，只需要调整if中的左中右顺序即可。</p>
+</blockquote>
 <h2 id="BST二分查找树遍历"><a href="#BST二分查找树遍历" class="headerlink" title="BST二分查找树遍历"></a>BST二分查找树遍历</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> void BST(TreeNode root, int target) &#123;</span><br><span class="line">     if (root.val &#x3D;&#x3D; target)</span><br><span class="line">           &#x2F;&#x2F; 找到⽬标，做点什么</span><br><span class="line">    if (root.val &lt; target)</span><br><span class="line">       BST(root.right, target);</span><br><span class="line">    if (root.val &gt; target)</span><br><span class="line">       BST(root.left, target);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这就是第一个步骤–遍历，当搭建好这个这整体流程后，我们只需要考虑每一个结点要做什么，也就是上面代码的注释行要做什么，其他细节不用纠结。</p>
 <h2 id="BST二分查找树增删改"><a href="#BST二分查找树增删改" class="headerlink" title="BST二分查找树增删改"></a>BST二分查找树增删改</h2><ol>
@@ -196,6 +208,7 @@
 <h2 id="完全二叉树的节点个数"><a href="#完全二叉树的节点个数" class="headerlink" title="完全二叉树的节点个数"></a>完全二叉树的节点个数</h2><p>[leetcode]<a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/count-complete-tree-nodes/</a></p>
 <p><img src="/images/mantree.png" alt="alt"><br>如图所示，借助完全二叉树的性质，满二叉树是特殊的完全二叉树，结点数与深度存在关系：2^h-1。</p>
 <p><img src="/images/mantree1.png" alt="alt"><br>因此，加入判断，若是满二叉树，则使用以上关系，若不是，普通递归遍历。复杂度为O(logn*logn)</p>
+<h2 id="路径总和p113"><a href="#路径总和p113" class="headerlink" title="路径总和p113"></a>路径总和p113</h2><p>[leetcode]<a href="https://leetcode-cn.com/problems/path-sum-ii/solution/chao-jian-dan-de-di-gui-si-lu-by-tyro666/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/path-sum-ii/solution/chao-jian-dan-de-di-gui-si-lu-by-tyro666/</a></p>
 
       
 
@@ -225,6 +238,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leetcode总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -289,6 +313,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          递归、回溯
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/08/25/c-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">c++文件操作总结</div>
@@ -318,7 +351,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode总结篇-–-二叉树相关"><span class="toc-number">1.</span> <span class="toc-text">leetcode总结篇 – 二叉树相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BST二分查找树遍历"><span class="toc-number">1.1.</span> <span class="toc-text">BST二分查找树遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BST二分查找树增删改"><span class="toc-number">1.2.</span> <span class="toc-text">BST二分查找树增删改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完全二叉树的节点个数"><span class="toc-number">1.3.</span> <span class="toc-text">完全二叉树的节点个数</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode总结篇-–-二叉树相关"><span class="toc-number">1.</span> <span class="toc-text">leetcode总结篇 – 二叉树相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树的遍历：递归和迭代"><span class="toc-number">1.1.</span> <span class="toc-text">二叉树的遍历：递归和迭代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BST二分查找树遍历"><span class="toc-number">1.2.</span> <span class="toc-text">BST二分查找树遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BST二分查找树增删改"><span class="toc-number">1.3.</span> <span class="toc-text">BST二分查找树增删改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完全二叉树的节点个数"><span class="toc-number">1.4.</span> <span class="toc-text">完全二叉树的节点个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路径总和p113"><span class="toc-number">1.5.</span> <span class="toc-text">路径总和p113</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -443,6 +476,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">leetcode总结</a>
               </li>
             
             <div class="clearfix"></div>

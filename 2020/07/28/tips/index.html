@@ -16,7 +16,7 @@
 <meta property="og:description" content="持续更新一些遇到的零碎小tips">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-28T13:10:37.000Z">
-<meta property="article:modified_time" content="2020-08-14T08:02:51.602Z">
+<meta property="article:modified_time" content="2020-09-05T02:03:33.279Z">
 <meta property="article:author" content="joy">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -182,6 +182,11 @@ cin.getline()实际上有三个参数，cin.getline(名字m,接受个数5,结束
 </ul>
 <p>pair将一对值组合成一个值，这一对值可以具有不同的数据类型（T1和T2），两个值可以分别用pair的两个公有函数first和second访问。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pair&lt;int, double&gt; p1;  &#x2F;&#x2F;使用默认构造函数</span><br><span class="line">pair&lt;int, double&gt; p2(1, 2.4);  &#x2F;&#x2F;用给定值初始化</span><br><span class="line">pair&lt;int, double&gt; p3(p2);  &#x2F;&#x2F;拷贝构造函数</span><br><span class="line">&#x2F;&#x2F;访问</span><br><span class="line">p1.first &#x3D; 1;</span><br><span class="line">p1.second &#x3D; 2.4;</span><br><span class="line">cout &lt;&lt; p1.first &lt;&lt; &#39; &#39; &lt;&lt; p1.second &lt;&lt; endl;</span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">pair&lt;int, double&gt; p1;</span><br><span class="line">p1 &#x3D; make_pair(1, 1.2);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>to_string函数</li>
+</ul>
+<p>将数值转化为字符串，返回对应的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i&#x3D;123;</span><br><span class="line"> </span><br><span class="line">	&#x2F;&#x2F;aastring s&#x3D;to_string(134) + &quot;abc&quot;;</span><br><span class="line">	string s&#x3D;to_string(i) + &quot;abc&quot;;</span><br><span class="line"> </span><br><span class="line">    cout&lt;&lt;s&lt;&lt;endl;</span><br><span class="line">	&#x2F;&#x2F;输出123abc</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -449,6 +454,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">笔试面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">leetcode总结</a>
               </li>
             
             <div class="clearfix"></div>
