@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>计算机网络面试总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="计算机网络面试总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络面试总结">
+<meta property="og:url" content="http://yoursite.com/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="计算机网络面试总结">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/tcpip.jpg">
+<meta property="og:image" content="http://yoursite.com/images/chuanshuceng.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sanciwoshou.png">
+<meta property="og:image" content="http://yoursite.com/images/sicihuishou.png">
+<meta property="article:published_time" content="2020-09-16T02:21:55.000Z">
+<meta property="article:modified_time" content="2020-09-16T14:09:40.714Z">
 <meta property="article:author" content="joy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/tcpip.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -144,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-计算机网络面试总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-计算机网络面试总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">计算机网络面试总结</a>
+    <h1 class="article-title" itemprop="name">
+      计算机网络面试总结
     </h1>
   
 
@@ -166,12 +173,93 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="计算机网络面试总结"><a href="#计算机网络面试总结" class="headerlink" title="计算机网络面试总结"></a>计算机网络面试总结</h1>
-        
-          <a class="article-more-a" href="/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/#more">more >></a>
-        
+        <h1 id="计算机网络面试总结"><a href="#计算机网络面试总结" class="headerlink" title="计算机网络面试总结"></a>计算机网络面试总结</h1> <a id="more"></a> 
+<h2 id="1-TCP-IP"><a href="#1-TCP-IP" class="headerlink" title="1.TCP/IP"></a>1.TCP/IP</h2><h3 id="四层协议"><a href="#四层协议" class="headerlink" title="四层协议"></a>四层协议</h3><p> <img src="/images/tcpip.jpg" alt="alt"></p>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>管理物理网络准备所需要的数据，数据链路层实现了网卡接口的网络驱动程序，以处理数据在物理媒介（比如以太网、令牌环等）上的传输。<br>1、与计算机网络适配器连接。</p>
+<p>2、根据合适的方式调整数据传输（不同的传输介质和网络格式不同）</p>
+<p>3、把数据转化为电子流或脉冲的形式在传输介质上传输。</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>WAN（Wide Area Network，广域网）通常使用众多分级的路由器来连接分散的主机或LAN（Local Area Network，局域网），因此，通信的两台主机一般不是直接相连的，而是通过多个中间节点（路由器）连接的。网络层的任务就是选择这些中间节点，以确定两台主机之间的通信路径。同时，网络层对上层协议隐藏了网络拓扑连接的细节，使得在传输层和网络应用程序看来，通信的双方是直接相连的。</p>
+<p>MAC地址</p>
+<p>我们的消息如果要在网络中找到对应的目标计算机，那么我们的计算机一定要有一个唯一的地址标识才行，而能区分我们计算机唯一的标识就是我们的网络适配器地址，我们的网络适配器地址是由厂商生产时候就规定了一个复杂的英文串组成。</p>
+<p>IP地址（最重要）</p>
+<p>由于MAC地址是一段复杂的字串组成不利于我们计算机进行逻辑运算，而我们的消息要在网络中快速路由到目标计算机，那么就一定需要有一套逻辑运算的规则，，所以就有了ARP协议，ARP协议规定了如何把MAC地址转换为可以用于逻辑运算的数字IP地址。IP协议根据数据包的目的IP地址来决定如何投递它。如果数据包不能直接发送给目标主机，那么IP协议就为它寻找一个合适的下一跳（next hop）路由器，并将数据包交付给该路由器来转发。多次重复这一过程，数据包最终到达目标主机，或者由于发送失败而被丢弃。可见，IP协议使用逐跳（hop by hop）的方式确定通信路径。</p>
+<p>域名</p>
+<p>因为IP地址过长不方便进行记忆，所以为了让用户更方便记忆所以衍生了DNS的服务，DNS完成了把IP地址转为简单容易记忆的域名地址。</p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p> <img src="/images/chuanshuceng.jpg" alt="alt"><br>传输层为两台主机上的应用程序提供端到端（end to end）的通信。与网络层使用的逐跳通信方式不同，传输层只关心通信的起始端和目的端，而不在乎数据包的中转过程<br>传输层主要提供以下几个功能</p>
+<p>1、提供应用程序接口，为网络应用程序提供网络访问的途径；</p>
+<p>2、提供可以从多个应用层序接收消息的功能（多路复用），同时也提供可以把消息分发给应用程序的功能（多路分解）。</p>
+<p>3、对数据进行错误检测、流量控制。</p>
+<p>TCP协议<br>TCP是一个面向连接的协议主要包括以下几个特性</p>
+<p>1、TCP面向连接，需要进行三次握手建立连接，四次挥手断开连接。</p>
+<p>2、基于流，可以一个个字节的方式接收数据，然后把这些数据组成数据段，发给网际层。</p>
+<p>3、对数据发送进行流量控制（滑动窗口协议），避免发送和接收方因为缓存写满而造成的数据丢失问题。</p>
+<p>3、对数据进行校验、分段的数据有重新排序功能，对错误和丢失的数据有重发机制。</p>
+<p>UDP协议<br>不可靠、无连接和基于数据报的服务</p>
+<p>比较TCP和UDP</p>
+<p>因为TCP要进行额外的握手、挥手、数据检验、排序机制，所以TCP的性能要比UDP要慢，但是相较UDP，TCP已经做了比较完善的数据错误验证机制所以这样会省去应用层需要做的大量数据验证工作。</p>
+<p>如果应用层对数据的校验不那么重视的话，看可以使用性能上更优的UDP，当然也可以使用UDP传输数据，数据校验的工作放到应用层来做也行，这就会加重开发的任务上。</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>TCP/IP的应用层对应于OSI的应用层、会话层、网络层，它们分别功能如下</p>
+<p>1、应用层：为用户的应用提供服务并支持网络访问。</p>
+<p>2、会话层：负责管理网络中计算之间的通信，提供传输层不具备的连接相关功能。</p>
+<p>3、表示层：负责转化数据格式，并处理数据加密和数据压缩。</p>
+<h3 id="TCP-IP是网络中使用的基本的通信协议，通常说TCP-IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”："><a href="#TCP-IP是网络中使用的基本的通信协议，通常说TCP-IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”：" class="headerlink" title="TCP/IP是网络中使用的基本的通信协议，通常说TCP/IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”："></a>TCP/IP是网络中使用的基本的通信协议，通常说TCP/IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”：</h3><ul>
+<li><p>第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认；</p>
+</li>
+<li><p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
+</li>
+<li><p>第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。握手完成后，两台主机开始传输数据了。</p>
+<p><img src="/images/sanciwoshou.png" alt="alt"><br>为什么三次握手：</p>
+<ul>
+<li>如果只有一次握手，Client不能确定与Server的单向连接，更加不能确定Server与Client的单向连接；</li>
+<li>如果只有两次握手，Client确定与Server的单向连接，但是Server不能确定与Client的单向连接；</li>
+<li>只有三次握手，Client与Server才能相互确认双向连接，实现双工数据传输。</li>
+</ul>
+</li>
+</ul>
+<p>断开过程需要经过“四次挥手”：</p>
+<ul>
+<li>第一次挥手：<br>Client发送一个FIN，用来关闭Client到Server的数据传送，Client进入FIN_WAIT_1状态。</li>
+<li>第二次挥手：<br>Server收到FIN后，发送一个ACK给Client，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），Server进入CLOSE_WAIT状态。</li>
+<li>第三次挥手：<br>Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST_ACK状态。</li>
+<li>第四次挥手：<br>Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手。<br><img src="/images/sicihuishou.png" alt="alt"></li>
+</ul>
+<p>为什么要四次挥手？</p>
+<p>“三次握手”的第二次握手发送SYN+ACK回应第一次握手的SYN，但是“四次挥手”的第二次挥手只能发送ACK回应第一次挥手的FIN，因为此时Server可能还有数据传输给Client，所以Server传输数据完成后才能发起第三次挥手发送FIN给Client，等待Client的第四次挥手ACK。</p>
+<h2 id="socket-原理"><a href="#socket-原理" class="headerlink" title="socket 原理"></a>socket 原理</h2><h3 id="套接字（socket）"><a href="#套接字（socket）" class="headerlink" title="套接字（socket）"></a>套接字（socket）</h3><p>socket是通信的基石，是支持TCP/IP协议的网络通信的基本操作单元。它是网络通信过程中端点的抽象表示，包含进行网络通信必须的五种信息：连接使用的协议，本地主机的IP地址，本地进程的协议端口，远地主机的IP地址，远地进程的协议口。<br>应用层可以和传输层通过Socket接口，区分来自不同应用程序进程或网络连接的通信，实现数据传输的并发服务。</p>
+<p>建立Socket连接至少需要一对套接字，其中一个运行于客户端，称为ClientSocket ，另一个运行于服务器端，称为ServerSocket 。</p>
+<p>套接字之间的连接过程分为三个步骤：服务器监听，客户端请求，连接确认。</p>
+<ul>
+<li><p>服务器监听：服务器端套接字并不定位具体的客户端套接字，而是处于等待连接的状态，实时监控网络状态，等待客户端的连接请求。</p>
+</li>
+<li><p>客户端请求：指客户端的套接字提出连接请求，要连接的目标是服务器端的套接字。为此，客户端的套接字必须首先描述它要连接的服务器的套接字，指出服务器端套接字的地址和端口号，然后就向服务器端套接字提出连接请求。</p>
+</li>
+<li><p>连接确认：当服务器端套接字监听到或者说接收到客户端套接字的连接请求时，就响应客户端套接字的请求，建立一个新的线程，把服务器端套接字的描述发 给客户端，一旦客户端确认了此描述，双方就正式建立连接。而服务器端套接字继续处于监听状态，继续接收其他客户端套接字的连接请求。</p>
+</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -180,16 +268,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ajoy0707.github.io/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归、回溯</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -204,702 +351,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-递归、回溯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/">递归、回溯</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/" class="archive-article-date">
-  	<time datetime="2020-09-05T02:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="递归、回溯"><a href="#递归、回溯" class="headerlink" title="递归、回溯"></a>递归、回溯</h1>
-        
-          <a class="article-more-a" href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leetcode总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/05/%E9%80%92%E5%BD%92%E3%80%81%E5%9B%9E%E6%BA%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机网络面试总结"><span class="toc-number">1.</span> <span class="toc-text">计算机网络面试总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-TCP-IP"><span class="toc-number">1.1.</span> <span class="toc-text">1.TCP&#x2F;IP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#四层协议"><span class="toc-number">1.1.1.</span> <span class="toc-text">四层协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据链路层"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络层"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#传输层"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用层"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">应用层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP是网络中使用的基本的通信协议，通常说TCP-IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”："><span class="toc-number">1.1.2.</span> <span class="toc-text">TCP&#x2F;IP是网络中使用的基本的通信协议，通常说TCP&#x2F;IP是Internet协议族，而不单单是TCP和IP。TCP协议可以对上层网络提供接口，使上层网络数据的传输建立在“无差别”的网络之上。建立起一个TCP连接需要经过“三次握手”：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#socket-原理"><span class="toc-number">1.2.</span> <span class="toc-text">socket 原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#套接字（socket）"><span class="toc-number">1.2.1.</span> <span class="toc-text">套接字（socket）</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-leetcode总结篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/31/leetcode%E6%80%BB%E7%BB%93%E7%AF%87/">二叉树相关</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/31/leetcode%E6%80%BB%E7%BB%93%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2020-08-31T13:21:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="leetcode总结篇-–-二叉树相关"><a href="#leetcode总结篇-–-二叉树相关" class="headerlink" title="leetcode总结篇 – 二叉树相关"></a>leetcode总结篇 – 二叉树相关</h1>
-        
-          <a class="article-more-a" href="/2020/08/31/leetcode%E6%80%BB%E7%BB%93%E7%AF%87/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">leetcode总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/31/leetcode%E6%80%BB%E7%BB%93%E7%AF%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-c-文件操作总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/c-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">c++文件操作总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/25/c-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-08-25T12:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="c-文件操作总结"><a href="#c-文件操作总结" class="headerlink" title="c++文件操作总结"></a>c++文件操作总结</h1>
-        
-          <a class="article-more-a" href="/2020/08/25/c-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/25/c-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-STL序列式容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/STL%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/">STL序列式容器总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/20/STL%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-08-20T15:38:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="STL序列式容器总结"><a href="#STL序列式容器总结" class="headerlink" title="STL序列式容器总结"></a>STL序列式容器总结</h1>
-        
-          <a class="article-more-a" href="/2020/08/20/STL%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/STL%E5%BA%8F%E5%88%97%E5%BC%8F%E5%AE%B9%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简易计算器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/15/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/">简易计算器</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/15/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-08-15T02:32:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="简易计算器"><a href="#简易计算器" class="headerlink" title="简易计算器"></a>简易计算器</h1>
-        
-          <a class="article-more-a" href="/2020/08/15/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">笔试面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/15/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-this指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/this%E6%8C%87%E9%92%88/">this指针</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/this%E6%8C%87%E9%92%88/" class="archive-article-date">
-  	<time datetime="2020-08-11T01:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="c-中的this指针"><a href="#c-中的this指针" class="headerlink" title="c++中的this指针"></a>c++中的this指针</h1>
-        
-          <a class="article-more-a" href="/2020/08/11/this%E6%8C%87%E9%92%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/this%E6%8C%87%E9%92%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-演讲管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/%E6%BC%94%E8%AE%B2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">基于STL的演讲比赛管理系统</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/%E6%BC%94%E8%AE%B2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-08-11T01:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基于STL的演讲比赛管理系统"><a href="#基于STL的演讲比赛管理系统" class="headerlink" title="基于STL的演讲比赛管理系统"></a>基于STL的演讲比赛管理系统</h1>
-        
-          <a class="article-more-a" href="/2020/08/11/%E6%BC%94%E8%AE%B2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/%E6%BC%94%E8%AE%B2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/centos7/">centos7</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/07/centos7/" class="archive-article-date">
-  	<time datetime="2020-08-07T12:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="centos7纯新手向踩坑实录"><a href="#centos7纯新手向踩坑实录" class="headerlink" title="centos7纯新手向踩坑实录"></a>centos7纯新手向踩坑实录</h1>
-        
-          <a class="article-more-a" href="/2020/08/07/centos7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">踩坑记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/07/centos7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Josephuse环问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/03/Josephuse%E7%8E%AF%E9%97%AE%E9%A2%98/">Josephuse环问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/03/Josephuse%E7%8E%AF%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-08-03T08:48:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Josephuse环问题-圆环中最后剩下的数"><a href="#Josephuse环问题-圆环中最后剩下的数" class="headerlink" title="Josephuse环问题-圆环中最后剩下的数"></a>Josephuse环问题-圆环中最后剩下的数</h1>
-        
-          <a class="article-more-a" href="/2020/08/03/Josephuse%E7%8E%AF%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">踩坑记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/03/Josephuse%E7%8E%AF%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -922,8 +399,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
