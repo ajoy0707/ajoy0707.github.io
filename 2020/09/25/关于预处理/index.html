@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>this指针 | Hexo</title>
+  <title>关于预处理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c++中的this指针">
+  <meta name="description" content="关于预处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this指针">
-<meta property="og:url" content="http://yoursite.com/2020/08/11/this%E6%8C%87%E9%92%88/index.html">
+<meta property="og:title" content="关于预处理">
+<meta property="og:url" content="http://yoursite.com/2020/09/25/%E5%85%B3%E4%BA%8E%E9%A2%84%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="c++中的this指针">
+<meta property="og:description" content="关于预处理">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-11T01:37:45.000Z">
-<meta property="article:modified_time" content="2020-08-11T02:24:26.561Z">
+<meta property="article:published_time" content="2020-09-25T03:06:43.000Z">
+<meta property="article:modified_time" content="2020-09-25T09:47:07.369Z">
 <meta property="article:author" content="joy">
-<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -149,39 +148,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-this指针" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-关于预处理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      this指针
+      关于预处理
     </h1>
   
 
         
-        <a href="/2020/08/11/this%E6%8C%87%E9%92%88/" class="archive-article-date">
-  	<time datetime="2020-08-11T01:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
+        <a href="/2020/09/25/%E5%85%B3%E4%BA%8E%E9%A2%84%E5%A4%84%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-09-25T03:06:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="c-中的this指针"><a href="#c-中的this指针" class="headerlink" title="c++中的this指针"></a>c++中的this指针</h1> <a id="more"></a> 
-<h3 id="在-C-中，每一个对象都能通过-this-指针来访问自己的地址。this-指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。"><a href="#在-C-中，每一个对象都能通过-this-指针来访问自己的地址。this-指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。" class="headerlink" title="在 C++ 中，每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。"></a>在 C++ 中，每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。</h3><h3 id="this可以访问类的所有成员，包括private、protected、public。"><a href="#this可以访问类的所有成员，包括private、protected、public。" class="headerlink" title="this可以访问类的所有成员，包括private、protected、public。"></a>this可以访问类的所有成员，包括private、protected、public。</h3><blockquote>
-<p>通常在class定义时要用到类型变量自身时，因为这时候还不知道变量名（为了通用也不可能固定实际的变量名），就用this这样的指针来使用变量自身。</p>
-</blockquote>
-<ul>
-<li>第6行类中setName函数的定义，形参是name，和成员变量name重名。用this-&gt;name=name，才能对成员变量name赋值，不用this指针的话，就是对形参的赋值。</li>
-<li>this是一个指针，需要使用-&gt;来访问成员变量或者成员函数</li>
-<li>this是const指针，它的值不能被修改的。</li>
-<li>this只能在成员函数内部使用，不能在其他地方使用。</li>
-<li>只有当对象被创建后this才有意义，因此不能在static成员函数中使用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">private:</span><br><span class="line">    char name;</span><br><span class="line"> public:</span><br><span class="line">    void show()&#123;cout&lt;&lt;&quot;hello world~&quot;&lt;&lt;endl;&#125;;</span><br><span class="line">    void setName(char *name)&#123;this-&gt;name &#x3D;name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> int main()&#123;</span><br><span class="line">    A.show();&#x2F;&#x2F;-------</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4>this 指针的类型可理解为 Box*。<br>此时得到两个地址分别为 box1 和 box2 对象的地址。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Box&#123;</span><br><span class="line">    public:</span><br><span class="line">        Box()&#123;&#125;；</span><br><span class="line">        ~Box()&#123;&#125;；</span><br><span class="line">        Box* get_address()   &#x2F;&#x2F;得到this的地址</span><br><span class="line">        &#123;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    </span><br><span class="line">    Box box1;</span><br><span class="line">    Box box2;</span><br><span class="line">    &#x2F;&#x2F; Box* 定义指针p接受对象box的get_address()成员函数的返回值，并打印</span><br><span class="line">    </span><br><span class="line">    Box* p &#x3D; box1.get_address();  </span><br><span class="line">    cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    p &#x3D; box2.get_address();</span><br><span class="line">    cout &lt;&lt; p &lt;&lt; endl; </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+        <h1 id="关于预处理"><a href="#关于预处理" class="headerlink" title="关于预处理"></a>关于预处理</h1> <a id="more"></a> 
+<p> 预处理的行为是由指令控制的。这些指令是由#字符开头的一些命令。当对一个源文件进行编译时，系统将自动调用预处理程序对源程序中的预处理部分作处理，处理完毕自动进入对源程序的编译。</p>
+<p> 编译器会将预处理的结果保存到和源文件同名的.i文件中，例如 main.c 的预处理结果在 main.i 中。和.c一样，.i也是文本文件，可以用编辑器打开直接查看内容。</p>
+<p> C语言提供了多种预处理功能，如宏定义、文件包含、条件编译等，合理地使用它们会使编写的程序便于阅读、修改、移植和调试，也有利于模块化程序设计。<br> 关于定义和工作原理，可以参考这一篇。<br> [] <a href="http://c.biancheng.net/view/1878.html" target="_blank" rel="noopener">http://c.biancheng.net/view/1878.html</a></p>
+<h2 id="预处理的功能"><a href="#预处理的功能" class="headerlink" title="预处理的功能"></a>预处理的功能</h2><ul>
+<li>将源文件中以”include”格式包含的文件复制到编译的源文件中。</li>
+<li>用实际值替换用“#define”定义的字符串。</li>
+<li>根据“#if”后面的条件决定需要编译的代码。</li>
 </ul>
-
+<p>大多数预处理器指令属于下面3种类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">●宏定义：#define 指令定义一个宏，#undef指令删除一个宏定义。</span><br><span class="line">●文件包含：#include指令导致一个指定文件的内容被包含到程序中。</span><br><span class="line">●条件编译：#if,#ifdef,#ifndef,#elif,#else和#dendif指令可以根据编译器可以测试的条件来将一段文本包含到程序中或排除在程序之外。</span><br><span class="line">剩下的#error,#line和#pragma指令</span><br></pre></td></tr></table></figure>
+<h2 id="1、宏定义命令-define"><a href="#1、宏定义命令-define" class="headerlink" title="1、宏定义命令-#define"></a>1、宏定义命令-#define</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3.14</span><br><span class="line">表示用3.14这个字符串代替PI，后面不要加分号，否则会把分号也替代进去</span><br><span class="line">●宏定义是宏名来表示一个字符串，在宏展开时又以该字符串取代宏名。核心是代换</span><br><span class="line"></span><br><span class="line">●宏定义必须写在函数之外，其作用域为宏定义命令起到源程序结束。</span><br><span class="line"></span><br><span class="line">●宏名在源程序只能够若用引号括起来，则预处理程序不对其作宏替换。</span><br><span class="line"></span><br><span class="line">●宏定义允许嵌套，在宏定义的字符串中可以使用已经定义的宏名。在宏展开时由预处理程序层层替换。</span><br><span class="line"></span><br><span class="line">●习惯上宏名可用大写字母表示，以方便与变量区别。但也允许用小写字母。</span><br></pre></td></tr></table></figure>
+<p>#define ABS(x) (x)&lt;0?-(x):(x)</p>
+<p>带参的宏和带参的函数相似，但其本质是不同的。使用带参宏时，在预处理时将程序源代码替换到相应的位置，编译时得到完整的目标代码，而不进行函数调用，因此程序执行效率要高些。而函数调用只需要编译一次函数，代码量较少，一般情况下，对于简单的功能，可使用宏替换的形式来使用。</p>
+<h2 id="文件包含-include（略）"><a href="#文件包含-include（略）" class="headerlink" title="文件包含-include（略）"></a>文件包含-include（略）</h2><h2 id="条件编译-if"><a href="#条件编译-if" class="headerlink" title="条件编译-if"></a>条件编译-if</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式 1</span><br><span class="line"></span><br><span class="line">    程序段 1</span><br><span class="line"></span><br><span class="line">#elif 常量表达式 2</span><br><span class="line"></span><br><span class="line">    程序段 2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#elif 常量表达式 n</span><br><span class="line"></span><br><span class="line">    程序段 n</span><br><span class="line"></span><br><span class="line">#else</span><br><span class="line"></span><br><span class="line">    程序段 m</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
       
 
       
@@ -210,17 +211,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -271,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ajoy0707.github.io/2020/08/11/this%E6%8C%87%E9%92%88/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ajoy0707.github.io/2020/09/25/%E5%85%B3%E4%BA%8E%E9%A2%84%E5%A4%84%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +275,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/15/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          简易计算器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/11/%E6%BC%94%E8%AE%B2%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于STL的演讲比赛管理系统</div>
+    <a href="/2020/09/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络面试总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -323,7 +304,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c-中的this指针"><span class="toc-number">1.</span> <span class="toc-text">c++中的this指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-C-中，每一个对象都能通过-this-指针来访问自己的地址。this-指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。"><span class="toc-number">1.0.1.</span> <span class="toc-text">在 C++ 中，每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。因此，在成员函数内部，它可以用来指向调用对象，它是一个const指针。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this可以访问类的所有成员，包括private、protected、public。"><span class="toc-number">1.0.2.</span> <span class="toc-text">this可以访问类的所有成员，包括private、protected、public。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于预处理"><span class="toc-number">1.</span> <span class="toc-text">关于预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#预处理的功能"><span class="toc-number">1.1.</span> <span class="toc-text">预处理的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、宏定义命令-define"><span class="toc-number">1.2.</span> <span class="toc-text">1、宏定义命令-#define</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件包含-include（略）"><span class="toc-number">1.3.</span> <span class="toc-text">文件包含-include（略）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件编译-if"><span class="toc-number">1.4.</span> <span class="toc-text">条件编译-if</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
